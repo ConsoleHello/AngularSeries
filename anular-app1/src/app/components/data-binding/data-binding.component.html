@@ -1,0 +1,57 @@
+<p>data-binding works!</p>
+
+<div class="row">
+    <div class="col-4">
+        One Way - from .ts to .html
+    </div>
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+
+<div class="row " style="padding-left: 5rem;">
+    <div class="col-4">
+        <div class="row">
+            Interpolation
+            <div class="col-4 x-3 bg-warning"> 
+                <h3> {{courseName}}</h3> 
+                <div>{{inputType}}</div>
+                <input type="text" value="{{courseName}}" placeholder="Enter Value">
+                <br>
+                <input type="{{inputType}}">
+            </div>
+            <div class="col-4">
+                Property Binding
+                <div [class]="myClassName">Dangert</div>
+                <input type="text" [value]="courseName" placeholder="Enter Value">
+                <input [type]="inputType">
+            </div>
+        </div>
+        <button class="btn btn-success" (click)="showAlert('Welcome to Angular 19')">Show Welcome</button>
+        <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+    </div>
+    <div class="col-4">
+       
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        Two Way - Data Binding
+    </div>
+    <div class="col-4">
+        <input type="text" [(ngModel)]="courseName"/> - {{courseName}}
+        <input type="checkbox" [(ngModel)] ="isIndian">
+        <select [(ngModel)] ="stateName">
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Bihar">Bihar</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <h1>{{firstName()}}</h1>
+    </div>
+</div>
