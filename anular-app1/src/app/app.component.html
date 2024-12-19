@@ -1,18 +1,37 @@
-<h1>Start Learning Angular</h1>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="employee-list">Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="add-employee">Add Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="data-binding">Data Binding</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="structureal-dir">Structural Directive</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="attribute-dir">Attribute Directive</a>
+        </li>
 
-<div>
-  <!-- day1 -->
-  <!-- <app-add-employee></app-add-employee>
-  <app-employee-list> </app-employee-list> -->
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-  <!-- <app-data-binding></app-data-binding> -->
-
-  <!-- day2 directives -->
-   <!-- <app-structureal-dir></app-structureal-dir> -->
-
-   <!-- day3 Attribute Directive -->
-    <app-attribute-directive></app-attribute-directive>
-
+<div class="p-2">
+  <router-outlet></router-outlet>
 </div>
-
-<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, laboriosam?</p> -->
