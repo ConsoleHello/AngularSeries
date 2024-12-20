@@ -1,0 +1,87 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Controll Flow Statement</h1>
+    <p> if else elseif </p>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        @if(div1IsVisible ==true){
+        <div class="p-3 text-center bg-primary">
+            <h4>Div1</h4>
+        </div>
+        }
+
+    </div>
+
+    <div class="col-3">
+        @if(isWarningDiv2 ==true){
+        <div class="bg-success p-3 text-center">
+            <h4>Div2</h4>
+        </div>
+
+        }@else{
+        <div class="bg-warning p-3 text-center">
+            <h4>Div2</h4>
+        </div>
+
+        }
+
+
+    </div>
+
+    <div class="col-3">
+        @if(num1 == num2){
+        <div class="p-3 text-center bg-warning">
+            <h4>Div3</h4>
+        </div>
+
+        }
+
+    </div>
+
+    <div class="col-3">
+        <div class=" bg-success p-3 text-center">
+            @if(isSelectedStatus =='Active'){
+            <h4>Active</h4>
+
+            }
+            @else if(isSelectedStatus=='Deactive'){
+            <h4>Deactive</h4>
+
+            }
+            @else if(isSelectedStatus=="Pending"){
+            <h4>Pending</h4>
+
+            }@else{
+            <h4>please select Status</h4>
+            }
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger p-3" (click)="showDiv1()">Show </button>
+        <button class="btn btn-primary mx-2 p-3" (click)="hideDiv1()">Hide</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <button class="btn btn-success mx-2 p-3" (click)="warningDiv2()">Toggle</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <input type="text" [(ngModel)]="num1" placeholder="Enter Num1">
+        <input type="text" [(ngModel)]="num2" placeholder="Enter Num2">
+    </div>
+
+    <div class="col-3 text-center">
+        <select [(ngModel)]="isSelectedStatus">
+            <option value="" disabled>Please Select only Delhi</option>
+            <option value="Active">Active</option>
+            <option value="Deactive">Deactive</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+</div>
