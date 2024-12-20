@@ -1,0 +1,43 @@
+
+
+<div class="container mt-4">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Pin Code"
+          [(ngModel)]="pinCode" />
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary" (click)="fetchPostApiData()">Search</button>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="postOffices.length === 0 && !isLoading" class="text-center">
+    No Data Found
+  </div>
+  
+  <div *ngIf="isLoading" class="text-center">
+    Loading...
+  </div>
+  
+  <div class="row" *ngIf="postOffices.length > 0">
+    <div class="col-md-4" *ngFor="let office of postOffices">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ office.Name }}</h5>
+          <p class="card-text">
+            <strong>Branch Type:</strong> {{ office.BranchType }}<br />
+            <strong>Delivery Status:</strong> {{ office.DeliveryStatus }}<br />
+            <strong>Circle:</strong> {{ office.Circle }}<br />
+            <strong>District:</strong> {{ office.District }}<br />
+            <strong>State:</strong> {{ office.State }}<br />
+            <strong>Country:</strong> {{ office.Country }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
