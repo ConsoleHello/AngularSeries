@@ -5,6 +5,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { StructurealDirComponent } from './components/directive/structureal-dir/structureal-dir.component';
 import { AttributeDirectiveComponent } from './components/directive/attribute-directive/attribute-directive.component';
 import { IfElseComponent } from './components/if-else/if-else.component';
+import { FoorloopSwitchComponent } from './components/foorloop-switch/foorloop-switch.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {   
         path: 'if-else',
         component: IfElseComponent
+    },
+    {   
+        path: 'foor-loop-switch',
+        component: FoorloopSwitchComponent
     },
 ];

@@ -1,0 +1,176 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Controll Flow Statement</h1>
+    <h3> <span>&#64;</span>For <span>&#64;</span>Switch Case </h3>
+</div>
+
+<!-- <div class="row pt-3">
+    <div class="col-3">
+        <div class="p-3 text-center bg-primary">
+            <h4>Div1</h4>
+        </div>
+
+    </div>
+
+    <div class="col-3">
+        <div class="bg-success p-3 text-center">
+            <h4>Div2</h4>
+        </div>
+
+        <div class="bg-warning p-3 text-center">
+            <h4>Div2</h4>
+        </div>
+
+
+
+    </div>
+
+    <div class="col-3">
+        <div class="p-3 text-center bg-warning">
+            <h4>Div3</h4>
+        </div>
+
+
+    </div>
+
+    <div class="col-3">
+        <div class=" bg-success p-3 text-center">
+            <h4>Active</h4>
+
+            <h4>Deactive</h4>
+
+            <h4>Pending</h4>
+
+            <h4>please select Status</h4>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger p-3">Show </button>
+        <button class="btn btn-primary mx-2 p-3">Hide</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <button class="btn btn-success mx-2 p-3">Toggle</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <input type="text" placeholder="Enter Num1">
+        <input type="text" placeholder="Enter Num2">
+    </div>
+
+    <div class="col-3 text-center">
+        <select>
+            <option value="" disabled>Please Select only Delhi</option>
+            <option value="Active">Active</option>
+            <option value="Deactive">Deactive</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+</div> -->
+
+<div class="row ml-5">
+
+    <div class="col-3">
+        <ul>
+            @for(item of cityArray ; track $index){
+            <li>{{item}}</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-3">
+        <div>
+            @for(item of cityArray; track $index){
+            <div>{{item}}</div>
+            }
+        </div>
+    </div>
+
+    <div class="col-3">
+        <select>
+            @for(item of cityArray; track $index){
+            <option>{{item}}</option>
+            }
+        </select>
+    </div>
+
+    <div class="col-3">
+        <select>
+            @for(item of studentList; track $index){
+            <option [value]="item.studId">{{item.name}}</option>
+            }
+        </select>
+    </div>
+
+
+
+    <div class="col-12 ml-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of studentList; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.city}}</td>
+                    <td>
+                        {{item.isAcive?'Active':'Deactive'}}
+                    </td>
+
+                </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h2>Switch Cases</h2>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="dayNumber" />
+
+    </div>
+    <div class="col-3">
+        Day Name is :
+        @switch(dayNumber) {
+        @case('1'){
+        <span>Monday</span>
+        }
+        @case('2'){
+        <span>Tuesday</span>
+        }
+        @case('3'){
+        <span>wednesday</span>
+        }
+        @case('4'){
+        <span>Thurasday</span>
+        }
+        @case('5'){
+        <span>Friday</span>
+        }
+        @case('6'){
+        <span>Saturday</span>
+        }
+        @case('7'){
+        <span>Sunday</span>
+        }
+        @default{
+        <span>Wrong Entry</span>
+        }
+        }
+    </div>
+</div>
