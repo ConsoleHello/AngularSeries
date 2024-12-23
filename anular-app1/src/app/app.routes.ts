@@ -8,6 +8,9 @@ import { IfElseComponent } from './components/if-else/if-else.component';
 import { FoorloopSwitchComponent } from './components/foorloop-switch/foorloop-switch.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { PostalCardsComponent } from './postal-cards/postal-cards.component';
+import { TempleteComponent } from './components/forms/templete/templete.component';
+import { ReactiveComponent } from './components/forms/reactive/reactive.component';
+import { FormElementComponent } from './components/forms/form-element/form-element.component';
 
 export const routes: Routes = [
     {
@@ -45,5 +48,17 @@ export const routes: Routes = [
     {   
         path: 'postal-api',
         component: PostalCardsComponent
+    },
+    {   
+        path: 'templete-forms',
+        component: TempleteComponent
+    },
+    {   
+        path: 'reactive-forms',
+        component: ReactiveComponent
+    },
+    {   
+        path: 'form-element',
+        component: FormElementComponent
     },
 ];

@@ -1,0 +1,39 @@
+<div style="width: 100%; padding: 2rem;">
+    <h1>Form  Details</h1>
+    <form [formGroup]="userDetails">
+        <input type="text" placeholder="First Name" formControlName="firstName">
+        <br>
+        <br>
+        <input type="text" placeholder="Last Name" formControlName="lastName">
+        <br>
+        <br>
+        <input type="number" placeholder="Phone Number" formControlName="phone_number">
+        <br>
+        <br>
+        <input type="email" placeholder="Email" formControlName="email">
+        <br>
+        <br>
+        <input type="password" placeholder="Password" formControlName="password">
+        <br>
+        <br>
+        <input type="text" placeholder="Token" formControlName="token">
+        <br>
+        <br>
+        <input type="text" placeholder="Company Cin" formControlName="companyCin">
+        <br>
+        <br>
+        <input type="text" placeholder="Gstin" formControlName="gstin">
+        <br>
+        <br>
+        <input type="text" placeholder="Company Type" formControlName="companyType">
+        <br>
+        <br>
+        <button type="button" (click) ="onSubmit()">Submit</button>
+
+    </form>
+
+    <div>
+        {{userDetails.value | json}}
+    </div>
+
+</div>
