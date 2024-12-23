@@ -6,6 +6,8 @@ import { StructurealDirComponent } from './components/directive/structureal-dir/
 import { AttributeDirectiveComponent } from './components/directive/attribute-directive/attribute-directive.component';
 import { IfElseComponent } from './components/if-else/if-else.component';
 import { FoorloopSwitchComponent } from './components/foorloop-switch/foorloop-switch.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { PostalCardsComponent } from './postal-cards/postal-cards.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +37,13 @@ export const routes: Routes = [
     {   
         path: 'foor-loop-switch',
         component: FoorloopSwitchComponent
+    },
+    {   
+        path: 'pipe',
+        component: PipeComponent
+    },
+    {   
+        path: 'postal-api',
+        component: PostalCardsComponent
     },
 ];
