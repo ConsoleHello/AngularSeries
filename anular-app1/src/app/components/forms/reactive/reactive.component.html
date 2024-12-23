@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-10 p-5 bg-secondary m-auto">
+        <h1 class="text-white font-xl">Reactive Form</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10 p-5  m-auto">
+
+
+        <form class="row g-3 needs-validation" novalidate [formGroup]="studentForm">
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" formControlName="firstName" required
+                    minlength="3" />
+                <!-- using ngIf -->
+                <div class="text-danger">
+                    <span
+                        *ngIf="studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']">
+                        This is Required
+                    </span>
+                    <span *ngIf="studentForm.controls['firstName'].errors?.['minlength']">
+                        Min 4 Characters Required
+                    </span>
+                </div>
+
+                <!-- using If Else Condition -->
+
+                <!-- <div class="text-danger">
+                  @if(studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']){
+                    <span>This is Required</span>
+                  } @else if(studentForm.controls['firstName'].errors?.['minlength']){
+                    <span>Min 4 Char is Required</span>
+
+                  }
+                </div> -->
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" formControlName="lastName" required minlength="3" />
+                <!-- <div class="text-danger">
+                        <span *ngIf="studentForm.controls['lastName'].touched && studentForm.controls['lastName'].errors?.['required']">
+                          This is Required
+                        </span>
+                        <span *ngIf="studentForm.controls['lastName'].errors?.['minlength']">
+                          Min 4 Characters Required
+                        </span>
+                      </div> -->
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom03" class="form-label">Username</label>
+                <input type="text" class="form-control" id="validationCustom03" formControlName="userName" required
+                    minlength="3" />
+
+                <div class="text-danger">
+                    <span
+                        *ngIf="studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['email']">
+                        Email Not Proper
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationCustom04" formControlName="city" required
+                    minlength="3" />
+
+            </div>
+
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">State</label>
+                <select class="form-select" id="validationCustom05" formControlName="state" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Madhaya Pradesh">Madhaya Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Zip Code</label>
+                <input type="text" class="form-control" id="validationCustom04" formControlName="zipCode" required
+                    minlength="3" />
+
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="invalidCheck" formControlName="isAcceptTerms"
+                        required />
+                    <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+
+                </div>
+            </div>
+
+            <div class="col-12">
+
+                <button class="btn btn-primary mx-2" [disabled]="studentForm.invalid" type="button" (click)="onSave()">
+                    Submit Form
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="clo-3">
+                    {{formValue | json}}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

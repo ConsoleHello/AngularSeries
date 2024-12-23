@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-10 p-5 bg-secondary m-auto">
+        <h1 class="text-white font-xl">Templete Form</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10 p-5  m-auto">
+
+
+<form class="row g-3 needs-validation" novalidate #form="ngForm">
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationCustom01" name="firstName" #fName="ngModel"
+            [(ngModel)]="studentObj.firstName" required minlength="3" />
+        <div class="text-danger">
+            <span *ngIf="fName.invalid && (fName.dirty || fName.touched)">
+                <span *ngIf="fName.errors?.['required']">This field is required.</span>
+                <span *ngIf="fName.errors?.['minlength']">Minimum 3 characters required.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" class="form-control" name="lastName" #lName="ngModel" [(ngModel)]="studentObj.lastName"
+            required minlength="3" />
+        <div class="text-danger">
+            <span *ngIf="lName.invalid && (lName.dirty || lName.touched)">
+                <span *ngIf="lName.errors?.['required']">This field is required.</span>
+                <span *ngIf="lName.errors?.['minlength']">Minimum 3 characters required.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationCustom03" class="form-label">Username</label>
+        <input type="text" class="form-control" id="validationCustom03" name="userName" #uName="ngModel"
+            [(ngModel)]="studentObj.userName" required minlength="3" />
+        <div class="text-danger">
+            <span *ngIf="uName.invalid && (uName.dirty || uName.touched)">
+                <span *ngIf="uName.errors?.['required']">This field is required.</span>
+                <span *ngIf="uName.errors?.['minlength']">Minimum 3 characters required.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="validationCustom04" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom04" name="city" #city="ngModel"
+            [(ngModel)]="studentObj.city" required minlength="3" />
+        <div class="text-danger">
+            <span *ngIf="city.invalid && (city.dirty || city.touched)">
+                <span *ngIf="city.errors?.['required']">This field is required.</span>
+                <span *ngIf="city.errors?.['minlength']">Minimum 3 characters required.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">State</label>
+        <select class="form-select" id="validationCustom05" name="state" #state="ngModel" [(ngModel)]="studentObj.state"
+            required>
+            <option value="" disabled selected>Choose...</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Madhaya Pradesh">Madhaya Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+        </select>
+        <div class="text-danger">
+            <span *ngIf="state.invalid && (state.dirty || state.touched)">
+                <span *ngIf="state.errors?.['required']">Please select a state.</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="invalidCheck" name="isAcceptTerms" #terms="ngModel"
+                [(ngModel)]="studentObj.isAcceptTerms" required />
+            <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+            <div class="text-danger">
+                <span *ngIf="terms.invalid && terms.touched">You must agree to the terms.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-secondary" type="reset" (click)="restForm()">Reset Form</button>
+        <button class="btn btn-primary mx-2" [disabled]="form.invalid" type="button" (click)="onSubmit()">
+            Submit Form
+        </button>
+    </div>
+</form>
+
+<div class="col-12 mt-5">
+    <pre>{{ studentObj | json }}</pre>
+</div>
+
+</div>
+</div>
+
