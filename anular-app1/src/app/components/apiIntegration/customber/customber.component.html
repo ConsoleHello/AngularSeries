@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-8">
+
+        <h1>Integration usimg with the Help of Service</h1>
+    </div>
+    <!-- <div class="col-4"><button class="btn btn-success" (click)="getAllCars()">Show Cars</button></div> -->
+</div>
+
+
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5>User List</h5>  
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr No.</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer City</th>
+                            <th scope="col">Mobile No</th>
+                            <th scope="col">Emai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (list of customerArr; track $index){
+                        <tr>
+                            <td>{{$index + 1}}</td>
+                            <td>{{list.customerName}}</td>
+                            <td>{{list.customerCity}}</td>
+                            <td>{{list.mobileNo}}</td>
+                            <td>{{list.email}}</td>
+                            <!-- <td>
+                                <button class="btn btn-success" (click)="onEdit(list)"> edit</button>
+                                <button class="btn btn-danger ml-2" (click)="onDelete(list.carId)"> Delete</button>
+                            </td> -->
+
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5>Create New Customer</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <label>Customer Name</label>
+                        <input type="text" [(ngModel)]="customerObj.customerName" class="form-control"
+                            placeholder="Enter customer name" />
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Customer City</label>
+                        <input type="text" [(ngModel)]="customerObj.customerCity" class="form-control"
+                            placeholder="Enter city name" />
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Mobile No</label>
+                        <input type="text" [(ngModel)]="customerObj.mobileNo" class="form-control"
+                            placeholder="Enter mobile number" />
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label>Email</label>
+                        <input type="text" [(ngModel)]="customerObj.email" class="form-control" placeholder="Enter email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-2 text-center">
+                        <button class="btn btn-secondary m-2">Rest Form</button>
+
+                        <button class="btn btn-success m-2" (click)="onSaveCustomer()">Post Customer</button>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
