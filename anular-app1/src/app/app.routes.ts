@@ -11,6 +11,8 @@ import { PostalCardsComponent } from './postal-cards/postal-cards.component';
 import { TempleteComponent } from './components/forms/templete/templete.component';
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { FormElementComponent } from './components/forms/form-element/form-element.component';
+import { GetApiComponent } from './components/apiIntegration/get-api/get-api.component';
+import { PostApiComponent } from './components/apiIntegration/post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +62,13 @@ export const routes: Routes = [
     {   
         path: 'form-element',
         component: FormElementComponent
+    },
+    {   
+        path: 'get-api',
+        component: GetApiComponent
+    },
+    {   
+        path: 'post-api',
+        component: PostApiComponent
     },
 ];
