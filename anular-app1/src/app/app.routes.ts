@@ -14,6 +14,7 @@ import { FormElementComponent } from './components/forms/form-element/form-eleme
 import { GetApiComponent } from './components/apiIntegration/get-api/get-api.component';
 import { PostApiComponent } from './components/apiIntegration/post-api/post-api.component';
 import { ResourceApiComponent } from './components/resource-api/resource-api.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 
 export const routes: Routes = [
     {
@@ -75,5 +76,9 @@ export const routes: Routes = [
     {   
         path: 'resource-api',
         component: ResourceApiComponent
+    },
+    {   
+        path: 'lifecycle',
+        component: LifecycleComponent
     },
 ];
