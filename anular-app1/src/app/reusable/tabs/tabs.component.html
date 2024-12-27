@@ -1,0 +1,8 @@
+<!-- <p>tabs works!</p> -->
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    @for(item of tablist; track $index){
+        <button type="button" class="btn" [ngClass]="currentTab ==item ?'btn-success':'btn-primary'" (click) = 'onTabChange(item)'>{{item}}</button>
+    }
+   
+</div>
