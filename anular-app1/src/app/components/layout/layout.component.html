@@ -1,0 +1,101 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="employee-list">Employee List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add-employee">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-binding">Data Binding</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Directives
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="structureal-dir">Structural Directive</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="attribute-dir">Attribute Directive</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Control Flow
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="if-else">If Else</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="foor-loop-switch">For Loop & Switch Cases</a>
+              </li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Forms
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="templete-forms">Templetes-Forms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reactive-forms">Reactive Forms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form-element">Forms Element</a>
+              </li>
+            </ul>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="pipe">Pipe</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Api Integration
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="postal-api">Postal API Call</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="get-api">Get Api call</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="post-api">Post Api</a>
+              </li>
+            </ul>
+          </li>
+  
+          
+          <li class="nav-item">
+            <a class="nav-link" href="resource-api">Resource Api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lifecycle">Life Cycle</a>
+          </li>
+        
+        </ul>
+        <form class="d-flex" role="search">
+          <button class="btn btn-danger" type="submit" (click)="logOut()">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>

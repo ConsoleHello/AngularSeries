@@ -1,8 +1,9 @@
 import { Component, resource } from '@angular/core';
+import { ProgressBarComponent } from '../../reusable/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-resource-api',
-  imports: [],
+  imports: [ProgressBarComponent],
   templateUrl: './resource-api.component.html',
   styleUrl: './resource-api.component.css'
 })

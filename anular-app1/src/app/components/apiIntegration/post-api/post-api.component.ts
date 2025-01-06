@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TabsComponent } from '../../../reusable/tabs/tabs.component';
 
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule],
+  imports: [FormsModule,TabsComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
@@ -25,9 +26,16 @@ export class PostApiComponent implements OnInit {
 
   http = inject(HttpClient);
 
+  currentTab:string ='Car List';
+
   ngOnInit(): void {
     // to trigger the api call function
     this.getAllCars()
+  }
+
+  onTabChange(tabName:string){
+    debugger;
+    this.currentTab=tabName 
   }
 
 

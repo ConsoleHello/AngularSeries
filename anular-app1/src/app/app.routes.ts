@@ -15,70 +15,40 @@ import { GetApiComponent } from './components/apiIntegration/get-api/get-api.com
 import { PostApiComponent } from './components/apiIntegration/post-api/post-api.component';
 import { ResourceApiComponent } from './components/resource-api/resource-api.component';
 import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
-        path: 'add-employee',
-        component: AddEmployeeComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
     },
     {
-        path: 'employee-list',
-        component: EmployeeListComponent
+        path: 'login',
+        component: LoginComponent,
     },
     {
-        path: 'data-binding',
-        component: DataBindingComponent
-    },
-    {
-        path: 'structureal-dir',
-        component: StructurealDirComponent
-    },
-    {   
-        path: 'attribute-dir',
-        component: AttributeDirectiveComponent
-    },
-    {   
-        path: 'if-else',
-        component: IfElseComponent
-    },
-    {   
-        path: 'foor-loop-switch',
-        component: FoorloopSwitchComponent
-    },
-    {   
-        path: 'pipe',
-        component: PipeComponent
-    },
-    {   
-        path: 'postal-api',
-        component: PostalCardsComponent
-    },
-    {   
-        path: 'templete-forms',
-        component: TempleteComponent
-    },
-    {   
-        path: 'reactive-forms',
-        component: ReactiveComponent
-    },
-    {   
-        path: 'form-element',
-        component: FormElementComponent
-    },
-    {   
-        path: 'get-api',
-        component: GetApiComponent
-    },
-    {   
-        path: 'post-api',
-        component: PostApiComponent
-    },
-    {   
-        path: 'resource-api',
-        component: ResourceApiComponent
-    },
-    {   
-        path: 'lifecycle',
-        component: LifecycleComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            { path: 'add-employee', component: AddEmployeeComponent },
+            { path: 'employee-list', component: EmployeeListComponent },
+            { path: 'data-binding', component: DataBindingComponent },
+            { path: 'structureal-dir', component: StructurealDirComponent },
+            { path: 'attribute-dir', component: AttributeDirectiveComponent },
+            { path: 'if-else', component: IfElseComponent },
+            { path: 'foor-loop-switch', component: FoorloopSwitchComponent },
+            { path: 'pipe', component: PipeComponent },
+            { path: 'postal-api', component: PostalCardsComponent },
+            { path: 'templete-forms', component: TempleteComponent },
+            { path: 'reactive-forms', component: ReactiveComponent },
+            { path: 'form-element', component: FormElementComponent },
+            { path: 'get-api', component: GetApiComponent },
+            { path: 'post-api', component: PostApiComponent, canActivate: [authGuard] }, // Protect this route
+            { path: 'resource-api', component: ResourceApiComponent },
+            { path: 'lifecycle', component: LifecycleComponent },
+        ],
     },
 ];

@@ -105,12 +105,13 @@
                     <td>{{stud.gender}}</td>
                     <td>{{stud.city}}</td>
                     <td>
-                        <div class="progress">
+                        <app-progress-bar [progressValue]="stud.totalMarks"></app-progress-bar>
+                        <!-- <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
                                 aria-valuemax="100" [ngStyle]="{'width':stud.totalMarks+'%'}">
                                 <span class="sr-only">{{stud.totalMarks}}</span>
                             </div>
-                        </div>
+                        </div> -->
                     </td>
                     <td [ngStyle]="{'background-color':stud.isAcive ? 'teal':'red'}">{{stud.isAcive
                         ?'Active':'Deactive'}}</td>

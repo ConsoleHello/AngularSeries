@@ -27,6 +27,7 @@ export class PostalCardsComponent {
     this.postalService.getPostOfficesByPinCode(this.pinCode).subscribe(
       (response) => {
         if (response[0]?.Status === 'Success') {
+          console.log("response",response)
           this.postOffices = response[0]?.PostOffice || [];
         } else {
           this.postOffices = [];
