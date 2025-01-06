@@ -1,8 +1,9 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { TabsComponent } from '../../reusable/tabs/tabs.component';
 
 @Component({
   selector: 'app-lifecycle',
-  imports: [],
+  imports: [TabsComponent],
   templateUrl: './lifecycle.component.html',
   styleUrl: './lifecycle.component.css'
 })
@@ -11,6 +12,8 @@ export class LifecycleComponent implements OnInit, AfterViewInit, AfterViewCheck
   constructor() {
 
   }
+
+  transport:string[] =["Car","Air Line","Bus","Train"]
 
   ngOnInit(): void {
     console.log("ngOnInit")
